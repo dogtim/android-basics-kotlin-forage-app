@@ -32,7 +32,7 @@ interface ForageableDao {
     fun getForageable(id: Long): Flow<Forageable>
 
     // The OnConflictStrategy.IGNORE strategy REPLACE a new item if it's primary key is already in the database.
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(forageable: Forageable)
 
     @Update
